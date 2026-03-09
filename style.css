@@ -1,14 +1,14 @@
 :root {
-  --bg: #f2ede6;
-  --surface: #faf7f1;
-  --surface-2: #f7f2eb;
-  --text: #263247;
-  --muted: #6f7783;
-  --gold: #c4a66a;
-  --line: #e5dccf;
-  --shadow: 0 12px 32px rgba(24, 31, 42, 0.05);
+  --bg: #ede7de;
+  --surface: #f8f3ec;
+  --surface-2: #f5efe7;
+  --text: #1f2d40;
+  --muted: #69727e;
+  --gold: #c3a568;
+  --line: #e2d8ca;
+  --shadow: 0 12px 28px rgba(24, 31, 42, 0.05);
   --max: 1180px;
-  --radius: 24px;
+  --radius: 26px;
 }
 
 * {
@@ -50,13 +50,13 @@ a {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(242, 237, 230, 0.94);
+  background: rgba(237, 231, 222, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(229, 220, 207, 0.9);
+  border-bottom: 1px solid rgba(226, 216, 202, 0.95);
 }
 
 .header-inner {
-  min-height: 84px;
+  min-height: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -66,20 +66,20 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   min-width: 0;
 }
 
 .brand-logo {
-  width: 42px;
-  height: 42px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   flex: 0 0 auto;
 }
 
 .brand-name {
-  font-size: 1.08rem;
-  letter-spacing: 0.02em;
+  font-size: 1.22rem;
+  letter-spacing: 0.01em;
   color: var(--text);
   white-space: nowrap;
 }
@@ -88,8 +88,16 @@ a {
   display: flex;
   align-items: center;
   gap: 22px;
-  font-size: 0.96rem;
   color: var(--muted);
+  font-size: 0.97rem;
+}
+
+.nav-link {
+  transition: 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text);
 }
 
 .header-button,
@@ -98,7 +106,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 50px;
   padding: 0 20px;
   border-radius: 999px;
   transition: 0.2s ease;
@@ -106,7 +114,7 @@ a {
 
 .header-button {
   border: 1px solid var(--gold);
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.62);
   color: var(--text);
 }
 
@@ -118,12 +126,12 @@ a {
 }
 
 .hero {
-  padding: 70px 0 46px;
+  padding: 72px 0 46px;
 }
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.12fr 0.88fr;
   gap: 34px;
   align-items: center;
 }
@@ -133,18 +141,18 @@ a {
   border: 1px solid var(--line);
   border-radius: 30px;
   box-shadow: var(--shadow);
-  padding: 50px;
+  padding: 52px;
 }
 
 .hero-kicker {
   display: inline-block;
-  padding: 10px 16px;
+  padding: 10px 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
   font-size: 0.95rem;
   color: var(--muted);
-  background: rgba(255, 255, 255, 0.65);
-  margin-bottom: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  margin-bottom: 24px;
 }
 
 h1,
@@ -157,7 +165,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4.7rem);
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
   margin-bottom: 22px;
   letter-spacing: -0.03em;
 }
@@ -169,7 +177,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.52rem;
   margin-bottom: 14px;
 }
 
@@ -177,14 +185,16 @@ h3 {
 .intro-text,
 .text-panel p,
 .step-card p,
-.quiet-box p {
+.quiet-box p,
+.memorial-text,
+.life-data {
   color: var(--muted);
 }
 
 .hero-text {
   font-size: 1.12rem;
-  max-width: 58ch;
   margin: 0;
+  max-width: 58ch;
 }
 
 .hero-actions {
@@ -213,7 +223,7 @@ h3 {
 
 .hero-mark-frame {
   width: 100%;
-  min-height: 540px;
+  min-height: 520px;
   background: linear-gradient(180deg, var(--surface) 0%, var(--surface-2) 100%);
   border: 1px solid var(--line);
   border-radius: 30px;
@@ -221,16 +231,16 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 46px;
+  padding: 38px;
 }
 
 .hero-logo {
-  width: min(100%, 360px);
+  width: min(100%, 270px);
   object-fit: contain;
 }
 
 .section {
-  padding: 44px 0;
+  padding: 46px 0;
 }
 
 .section-soft {
@@ -243,11 +253,11 @@ h3 {
 }
 
 .quiet-box {
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.64);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 32px;
+  padding: 34px;
 }
 
 .quiet-box p {
@@ -271,8 +281,8 @@ h3 {
 }
 
 .step-number {
-  width: 46px;
-  height: 46px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   border: 1px solid var(--gold);
   color: var(--gold);
@@ -284,7 +294,7 @@ h3 {
 
 .split {
   display: grid;
-  grid-template-columns: 1fr 0.9fr;
+  grid-template-columns: 1fr 0.92fr;
   gap: 26px;
   align-items: stretch;
 }
@@ -346,14 +356,83 @@ h3 {
   gap: 18px;
 }
 
+/* demo.html */
+
+.memorial-hero {
+  padding-top: 120px;
+}
+
+.memorial-card {
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 42px;
+}
+
+.memorial-photo {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 22px;
+}
+
+.life-data {
+  margin-bottom: 22px;
+  font-size: 1rem;
+}
+
+.memorial-text {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 16px;
+  min-height: 220px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
+.memorial-input {
+  width: 100%;
+  height: 140px;
+  margin-top: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  padding: 14px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  resize: vertical;
+  color: var(--text);
+}
+
+.memorial-input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
 @media (max-width: 980px) {
-  .header-nav a:not(.header-button) {
+  .header-nav .nav-link {
     display: none;
   }
 
   .hero-inner,
   .steps,
-  .split {
+  .split,
+  .gallery {
     grid-template-columns: 1fr;
   }
 
@@ -362,7 +441,8 @@ h3 {
   .text-panel,
   .quote-panel,
   .step-card,
-  .quiet-box {
+  .quiet-box,
+  .memorial-card {
     padding: 26px;
   }
 
@@ -371,33 +451,37 @@ h3 {
   }
 
   .hero-logo {
-    width: min(100%, 300px);
+    width: min(100%, 240px);
+  }
+
+  .gallery img {
+    min-height: 260px;
   }
 }
 
 @media (max-width: 640px) {
   .header-inner {
-    min-height: 74px;
+    min-height: 82px;
   }
 
   .brand-logo {
-    width: 36px;
-    height: 36px;
+    width: 52px;
+    height: 52px;
   }
 
   .brand-name {
-    font-size: 0.98rem;
+    font-size: 1.08rem;
   }
 
   .header-button,
   .button-primary,
   .button-secondary {
-    min-height: 46px;
+    min-height: 48px;
     padding: 0 16px;
   }
 
   .hero {
-    padding-top: 36px;
+    padding-top: 34px;
   }
 
   h1 {
@@ -405,7 +489,11 @@ h3 {
   }
 
   h2 {
-    font-size: 1.85rem;
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    font-size: 1.38rem;
   }
 
   .hero-copy {
@@ -413,14 +501,23 @@ h3 {
   }
 
   .hero-mark-frame {
-    padding: 30px 20px;
+    padding: 28px 18px;
+  }
+
+  .hero-logo {
+    width: min(100%, 210px);
   }
 
   .intro-text,
   .quiet-box p,
   .text-panel p,
   .step-card p,
-  .hero-text {
+  .hero-text,
+  .memorial-text {
     font-size: 1.03rem;
+  }
+
+  .quote-panel blockquote {
+    font-size: 1.18rem;
   }
 }
