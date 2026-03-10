@@ -1,108 +1,336 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erinnerungsseite – Vergissmeinnicht</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beispiel einer Erinnerungsseite – Vergissmeinnicht.life</title>
+  <meta name="description" content="So kann eine digitale Erinnerungsseite aussehen – würdevoll, ruhig und für Familie und Freunde zugänglich.">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .memorial-page {
+      padding: 46px 0 70px;
+    }
+
+    .memorial-shell {
+      width: min(980px, calc(100% - 24px));
+      margin: 0 auto;
+    }
+
+    .memorial-hero {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 40px 24px 34px;
+      text-align: center;
+    }
+
+    .memorial-portrait {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 24px;
+      margin: 0 auto 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .memorial-kicker {
+      display: inline-block;
+      padding: 9px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.65);
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .memorial-name {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 10px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .memorial-dates {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+    }
+
+    .memorial-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.85;
+    }
+
+    .memorial-section {
+      margin-top: 26px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 30px 24px;
+    }
+
+    .memorial-section h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      color: var(--text);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .memorial-section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.9;
+    }
+
+    .memory-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .memory-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .memory-quote {
+      margin-top: 24px;
+      padding: 22px 20px;
+      border-left: 2px solid var(--gold);
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 18px;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.8;
+    }
+
+    .memory-form {
+      margin-top: 20px;
+    }
+
+    .memory-form textarea {
+      width: 100%;
+      min-height: 140px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: #fff;
+      padding: 16px 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      color: var(--text);
+      resize: vertical;
+    }
+
+    .memory-form textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .memory-actions {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .memory-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      background: #fff;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .memory-button:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .memorial-back {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: transparent;
+    }
+
+    @media (max-width: 900px) {
+      .memory-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-grid img {
+        height: 260px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .memorial-page {
+        padding-top: 26px;
+      }
+
+      .memorial-hero,
+      .memorial-section {
+        padding: 24px 18px;
+        border-radius: 26px;
+      }
+
+      .memorial-portrait {
+        width: 140px;
+        height: 140px;
+        border-radius: 18px;
+      }
+
+      .memorial-intro,
+      .memorial-section p,
+      .memory-quote {
+        font-size: 1rem;
+      }
+
+      .memory-grid img {
+        height: 220px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="site-header">
-<div class="container header-inner">
+  <header class="site-header">
+    <div class="container header-inner">
 
-<a href="index.html" class="brand">
-<img src="logo.png" class="brand-logo">
-<span class="brand-name">Vergissmeinnicht.life</span>
-</a>
+      <a href="index.html" class="brand">
+        <img src="logo-icon.png" alt="Vergissmeinnicht Logo" class="brand-logo">
+        <span class="brand-name">Vergissmeinnicht.life</span>
+      </a>
 
-</div>
-</header>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Zur Startseite</a>
+      </nav>
 
-<main>
+    </div>
+  </header>
 
-<section class="hero memorial-hero">
+  <main class="memorial-page">
+    <div class="memorial-shell">
 
-<div class="container narrow">
+      <section class="memorial-hero">
+        <div class="memorial-kicker">Beispiel einer Erinnerungsseite</div>
 
-<div class="memorial-card">
+        <img
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80"
+          alt="Porträt von Maria Schneider"
+          class="memorial-portrait"
+        >
 
-<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="memorial-photo">
+        <h1 class="memorial-name">Maria Schneider</h1>
 
-<h1>Anna Schneider</h1>
+        <div class="memorial-dates">1948 – 2023</div>
 
-<div class="life-data">
-1965 – 2024
-</div>
+        <p class="memorial-intro">
+          Maria war eine liebevolle Mutter, Großmutter und Freundin.
+          Sie liebte ihren Garten, lange Spaziergänge, Sonntage mit der Familie
+          und die kleinen Augenblicke, in denen aus Alltag Erinnerung wurde.
+          Diese Seite bewahrt einen stillen Eindruck ihres Lebens – für die,
+          die sie kannten, liebten und nicht vergessen möchten.
+        </p>
+      </section>
 
-<p class="memorial-text">
-Anna war eine liebevolle Mutter, eine treue Freundin
-und ein Mensch, der immer zuerst an andere dachte.
-Ihre Ruhe, ihr Lachen und ihre Wärme bleiben
-in den Herzen der Menschen, die sie kannten.
-</p>
+      <section class="memorial-section">
+        <h2>Ein gelebtes Leben</h2>
 
-</div>
+        <p>
+          Was von einem Menschen bleibt, lässt sich nicht auf einen Namen und zwei Daten reduzieren.
+          Es bleibt das Lachen bei Familienfesten, der Duft der Küche, die Ruhe einer vertrauten Stimme
+          und die Wärme, mit der jemand einen Raum erfüllt hat. Eine Erinnerungsseite gibt diesen Spuren
+          einen Ort – zugänglich für Familie, Freunde und für jene, die später verstehen möchten,
+          wer dieser Mensch war.
+        </p>
 
-</div>
+        <div class="memory-quote">
+          Manche Menschen gehen aus unserem Blick.<br>
+          Aber nicht aus unserem Herzen.
+        </div>
+      </section>
 
-</section>
+      <section class="memorial-section">
+        <h2>Bilder und Augenblicke</h2>
 
+        <p>
+          Fotos können nicht alles erzählen. Aber sie halten Momente fest,
+          an denen ein Leben sichtbar wird – Begegnungen, Reisen, Feste,
+          stille Nachmittage, Nähe.
+        </p>
 
-<section class="section">
+        <div class="memory-grid">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 1">
+          <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 2">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 3">
+        </div>
+      </section>
 
-<div class="container narrow">
+      <section class="memorial-section">
+        <h2>Gedanken hinterlassen</h2>
 
-<h2>Erinnerungen</h2>
+        <p>
+          Angehörige und Freunde können hier Erinnerungen, Worte des Abschieds
+          oder persönliche Gedanken hinterlassen. So entsteht aus einzelnen Stimmen
+          ein gemeinsamer Ort des Erinnerns.
+        </p>
 
-<div class="gallery">
+        <div class="memory-form">
+          <textarea placeholder="Ihre Erinnerung oder Ihr persönlicher Gedanke..."></textarea>
 
-<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
-<img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7">
-<img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e">
+          <div class="memory-actions">
+            <button type="button" class="memory-button">Erinnerung speichern</button>
+          </div>
+        </div>
 
-</div>
+        <a href="index.html" class="memorial-back">Zur Startseite</a>
+      </section>
 
-</div>
+    </div>
+  </main>
 
-</section>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© Vergissmeinnicht.life</div>
 
-
-<section class="section section-soft">
-
-<div class="container narrow">
-
-<h2>Gedanken hinterlassen</h2>
-
-<div class="quiet-box">
-
-<p>
-Wenn Sie eine Erinnerung an Anna teilen möchten,
-können Sie hier einen Gedanken hinterlassen.
-</p>
-
-<textarea placeholder="Ihre Erinnerung..." class="memorial-input"></textarea>
-
-<button class="button-primary">Erinnerung speichern</button>
-
-</div>
-
-</div>
-
-</section>
-
-</main>
-
-<footer class="site-footer">
-
-<div class="container footer-inner">
-
-<div>© Vergissmeinnicht.life</div>
-
-</div>
-
-</footer>
+      <div class="footer-links">
+        <a href="index.html">Startseite</a>
+        <a href="demo.html">Beispielseite</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
