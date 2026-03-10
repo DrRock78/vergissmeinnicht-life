@@ -2,335 +2,271 @@
 <html lang="de">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beispiel einer Erinnerungsseite – Vergissmeinnicht.life</title>
-  <meta name="description" content="So kann eine digitale Erinnerungsseite aussehen – würdevoll, ruhig und für Familie und Freunde zugänglich.">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="style.css">
 
-  <style>
-    .memorial-page {
-      padding: 46px 0 70px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .memorial-shell {
-      width: min(980px, calc(100% - 24px));
-      margin: 0 auto;
-    }
+<title>Erinnerungsseite – Maria Schneider</title>
 
-    .memorial-hero {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      box-shadow: var(--shadow);
-      padding: 40px 24px 34px;
-      text-align: center;
-    }
+<link rel="stylesheet" href="style.css">
 
-    .memorial-portrait {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 24px;
-      margin: 0 auto 24px;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
+<style>
 
-    .memorial-kicker {
-      display: inline-block;
-      padding: 9px 16px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255, 255, 255, 0.65);
-      margin-bottom: 18px;
-      font-size: 0.95rem;
-    }
+.memorial-wrapper{
+max-width:900px;
+margin:auto;
+padding:40px 20px;
+}
 
-    .memorial-name {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.08;
-      margin: 0 0 10px;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
+.memorial-header{
+text-align:center;
+margin-bottom:40px;
+}
 
-    .memorial-dates {
-      color: var(--muted);
-      font-size: 1.05rem;
-      margin-bottom: 24px;
-    }
+.memorial-portrait{
+width:180px;
+border-radius:20px;
+margin:auto;
+margin-bottom:20px;
+}
 
-    .memorial-intro {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.85;
-    }
+.memorial-name{
+font-size:2.5rem;
+margin-bottom:5px;
+}
 
-    .memorial-section {
-      margin-top: 26px;
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 30px 24px;
-    }
+.memorial-dates{
+color:#777;
+margin-bottom:20px;
+}
 
-    .memorial-section h2 {
-      margin: 0 0 16px;
-      font-size: clamp(1.7rem, 3vw, 2.4rem);
-      color: var(--text);
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-    }
+.memorial-text{
+max-width:650px;
+margin:auto;
+line-height:1.8;
+}
 
-    .memorial-section p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 1.06rem;
-      line-height: 1.9;
-    }
+.memory-block{
+margin-top:50px;
+}
 
-    .memory-grid {
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
+.memory-image{
+width:100%;
+border-radius:16px;
+}
 
-    .memory-grid img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      background: #fff;
-    }
+.memory-comments{
+margin-top:20px;
+border-left:3px solid #ddd;
+padding-left:20px;
+}
 
-    .memory-quote {
-      margin-top: 24px;
-      padding: 22px 20px;
-      border-left: 2px solid var(--gold);
-      background: rgba(255, 255, 255, 0.75);
-      border-radius: 18px;
-      color: var(--muted);
-      font-size: 1.12rem;
-      line-height: 1.8;
-    }
+.memory-comment{
+margin-bottom:18px;
+}
 
-    .memory-form {
-      margin-top: 20px;
-    }
+.comment-author{
+font-weight:bold;
+}
 
-    .memory-form textarea {
-      width: 100%;
-      min-height: 140px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-      padding: 16px 18px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1rem;
-      color: var(--text);
-      resize: vertical;
-    }
+.comment-time{
+color:#777;
+font-size:0.9rem;
+margin-bottom:4px;
+}
 
-    .memory-form textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-    }
+.video-block{
+margin-top:40px;
+}
 
-    .memory-actions {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+video{
+width:100%;
+border-radius:16px;
+}
 
-    .memory-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 22px;
-      border-radius: 999px;
-      border: 1px solid var(--gold);
-      background: #fff;
-      color: var(--text);
-      transition: 0.2s ease;
-    }
+.audio-block{
+margin-top:30px;
+}
 
-    .memory-button:hover {
-      transform: translateY(-1px);
-      box-shadow: var(--shadow);
-    }
+audio{
+width:100%;
+}
 
-    .memorial-back {
-      margin-top: 28px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      color: var(--text);
-      background: transparent;
-    }
+.condolence-book{
+margin-top:60px;
+padding-top:30px;
+border-top:1px solid #ddd;
+}
 
-    @media (max-width: 900px) {
-      .memory-grid {
-        grid-template-columns: 1fr;
-      }
+.condolence-entry{
+margin-bottom:25px;
+}
 
-      .memory-grid img {
-        height: 260px;
-      }
-    }
+.condolence-name{
+font-weight:bold;
+}
 
-    @media (max-width: 640px) {
-      .memorial-page {
-        padding-top: 26px;
-      }
+.condolence-date{
+font-size:0.9rem;
+color:#777;
+}
 
-      .memorial-hero,
-      .memorial-section {
-        padding: 24px 18px;
-        border-radius: 26px;
-      }
+.condolence-form{
+margin-top:30px;
+}
 
-      .memorial-portrait {
-        width: 140px;
-        height: 140px;
-        border-radius: 18px;
-      }
+textarea{
+width:100%;
+height:120px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
 
-      .memorial-intro,
-      .memorial-section p,
-      .memory-quote {
-        font-size: 1rem;
-      }
+button{
+margin-top:10px;
+padding:10px 20px;
+border-radius:20px;
+border:none;
+background:#333;
+color:white;
+cursor:pointer;
+}
 
-      .memory-grid img {
-        height: 220px;
-      }
-    }
-  </style>
+</style>
+
 </head>
+
 
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
+<div class="memorial-wrapper">
 
-      <a href="index.html" class="brand">
-        <img src="logo-icon.png" alt="Vergissmeinnicht Logo" class="brand-logo">
-        <span class="brand-name">Vergissmeinnicht.life</span>
-      </a>
+<div class="memorial-header">
 
-      <nav class="header-nav">
-        <a href="index.html" class="nav-link">Zur Startseite</a>
-      </nav>
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" class="memorial-portrait">
 
-    </div>
-  </header>
+<div class="memorial-name">
+Maria Schneider
+</div>
 
-  <main class="memorial-page">
-    <div class="memorial-shell">
+<div class="memorial-dates">
+1948 – 2023
+</div>
 
-      <section class="memorial-hero">
-        <div class="memorial-kicker">Beispiel einer Erinnerungsseite</div>
+<div class="memorial-text">
 
-        <img
-          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80"
-          alt="Porträt von Maria Schneider"
-          class="memorial-portrait"
-        >
+Maria war eine liebevolle Mutter, Großmutter und Freundin.
+Sie liebte ihren Garten, lange Spaziergänge und die Sonntage,
+an denen die ganze Familie zusammenkam.
 
-        <h1 class="memorial-name">Maria Schneider</h1>
+Viele erinnern sich besonders an ihre Küche,
+in der immer etwas gebacken oder gekocht wurde.
 
-        <div class="memorial-dates">1948 – 2023</div>
+</div>
 
-        <p class="memorial-intro">
-          Maria war eine liebevolle Mutter, Großmutter und Freundin.
-          Sie liebte ihren Garten, lange Spaziergänge, Sonntage mit der Familie
-          und die kleinen Augenblicke, in denen aus Alltag Erinnerung wurde.
-          Diese Seite bewahrt einen stillen Eindruck ihres Lebens – für die,
-          die sie kannten, liebten und nicht vergessen möchten.
-        </p>
-      </section>
+</div>
 
-      <section class="memorial-section">
-        <h2>Ein gelebtes Leben</h2>
 
-        <p>
-          Was von einem Menschen bleibt, lässt sich nicht auf einen Namen und zwei Daten reduzieren.
-          Es bleibt das Lachen bei Familienfesten, der Duft der Küche, die Ruhe einer vertrauten Stimme
-          und die Wärme, mit der jemand einen Raum erfüllt hat. Eine Erinnerungsseite gibt diesen Spuren
-          einen Ort – zugänglich für Familie, Freunde und für jene, die später verstehen möchten,
-          wer dieser Mensch war.
-        </p>
+<div class="memory-block">
 
-        <div class="memory-quote">
-          Manche Menschen gehen aus unserem Blick.<br>
-          Aber nicht aus unserem Herzen.
-        </div>
-      </section>
+<img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" class="memory-image">
 
-      <section class="memorial-section">
-        <h2>Bilder und Augenblicke</h2>
+<div class="memory-comments">
 
-        <p>
-          Fotos können nicht alles erzählen. Aber sie halten Momente fest,
-          an denen ein Leben sichtbar wird – Begegnungen, Reisen, Feste,
-          stille Nachmittage, Nähe.
-        </p>
+<div class="memory-comment">
+<div class="comment-author">Anna (Tochter)</div>
+<div class="comment-time">vor 2 Tagen</div>
+Mama hat jeden Sonntag für uns gekocht. Der Duft von Apfelkuchen wird mich immer an sie erinnern.
+</div>
 
-        <div class="memory-grid">
-          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 1">
-          <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 2">
-          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=900&q=80" alt="Erinnerungsbild 3">
-        </div>
-      </section>
+<div class="memory-comment">
+<div class="comment-author">Markus (Sohn)</div>
+<div class="comment-time">vor 2 Tagen</div>
+Ich vermisse Mamas Apfelkuchen. Aber ich vermisse Mama noch mehr.
+</div>
 
-      <section class="memorial-section">
-        <h2>Gedanken hinterlassen</h2>
+<div class="memory-comment">
+<div class="comment-author">Julia (Nichte)</div>
+<div class="comment-time">vor 1 Tag</div>
+Erinnert ihr euch noch an die Frühlinge, wenn wir beim Nachbarn die Äpfel gekauft haben?
+</div>
 
-        <p>
-          Angehörige und Freunde können hier Erinnerungen, Worte des Abschieds
-          oder persönliche Gedanken hinterlassen. So entsteht aus einzelnen Stimmen
-          ein gemeinsamer Ort des Erinnerns.
-        </p>
+<div class="memory-comment">
+<div class="comment-author">Herr Weber (Apfelbauer)</div>
+<div class="comment-time">vor 3 Wochen</div>
+Ich war heute am Grab von Maria. Sie hat viele Jahre bei uns auf dem Hof ihre Äpfel gekauft.
+</div>
 
-        <div class="memory-form">
-          <textarea placeholder="Ihre Erinnerung oder Ihr persönlicher Gedanke..."></textarea>
+<div class="memory-comment">
+<div class="comment-author">Thomas (Nachbar)</div>
+<div class="comment-time">heute</div>
+Jetzt hätte ich auch gern ein Stück von ihrem berühmten Apfelkuchen probiert.
+</div>
 
-          <div class="memory-actions">
-            <button type="button" class="memory-button">Erinnerung speichern</button>
-          </div>
-        </div>
+</div>
 
-        <a href="index.html" class="memorial-back">Zur Startseite</a>
-      </section>
+</div>
 
-    </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© Vergissmeinnicht.life</div>
+<div class="video-block">
 
-      <div class="footer-links">
-        <a href="index.html">Startseite</a>
-        <a href="demo.html">Beispielseite</a>
-      </div>
-    </div>
-  </footer>
+<h2>Ein Moment aus dem Leben</h2>
+
+<video controls>
+<source src="maria-video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+
+<div class="audio-block">
+
+<h2>Eine Stimme, die bleibt</h2>
+
+<audio controls>
+<source src="maria-stimme.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+
+<div class="condolence-book">
+
+<h2>Digitales Kondolenzbuch</h2>
+
+<div class="condolence-entry">
+<div class="condolence-name">Sabine (Freundin)</div>
+<div class="condolence-date">vor 5 Tagen</div>
+Maria hatte immer ein offenes Ohr. Sie wird uns fehlen.
+</div>
+
+<div class="condolence-entry">
+<div class="condolence-name">Lena (Enkelin)</div>
+<div class="condolence-date">vor 3 Tagen</div>
+Oma hat mir beigebracht, Plätzchen zu backen.
+</div>
+
+<div class="condolence-entry">
+<div class="condolence-name">Herr Keller (Nachbar)</div>
+<div class="condolence-date">gestern</div>
+Maria war ein Mensch, der jeden freundlich begrüßt hat.
+</div>
+
+
+<div class="condolence-form">
+
+<textarea placeholder="Ihre Erinnerung oder Ihr Beileid"></textarea>
+
+<button>
+Erinnerung hinzufügen
+</button>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
