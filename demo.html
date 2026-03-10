@@ -1,354 +1,312 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beispiel einer Erinnerungsseite – Vergissmeinnicht.life</title>
+  <link rel="stylesheet" href="style.css">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .memorial-wrapper {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px 70px;
+    }
 
-<title>Beispiel einer Erinnerungsseite – Vergissmeinnicht.life</title>
+    .memorial-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-<link rel="stylesheet" href="style.css">
+    .memorial-portrait {
+      width: 220px;
+      border-radius: 20px;
+      margin: 0 auto 20px;
+      display: block;
+    }
 
-<style>
+    .memorial-name {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
 
-.memorial-wrapper{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
+    .memorial-dates {
+      color: #777;
+      margin-bottom: 20px;
+    }
 
-.memorial-header{
-text-align:center;
-margin-bottom:40px;
-}
+    .memorial-text {
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.8;
+    }
 
-.memorial-portrait{
-width:220px;
-border-radius:20px;
-margin:auto;
-margin-bottom:20px;
-}
+    .memory-block {
+      margin-top: 50px;
+    }
 
-.memorial-name{
-font-size:2.5rem;
-margin-bottom:5px;
-}
+    .memory-image {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
 
-.memorial-dates{
-color:#777;
-margin-bottom:20px;
-}
+    .memory-comments {
+      margin-top: 20px;
+      border-left: 3px solid #ddd;
+      padding-left: 20px;
+    }
 
-.memorial-text{
-max-width:650px;
-margin:auto;
-line-height:1.8;
-}
+    .memory-comment {
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
 
-.memory-block{
-margin-top:50px;
-}
+    .comment-author {
+      font-weight: bold;
+    }
 
-.memory-image{
-width:100%;
-border-radius:16px;
-}
+    .comment-time {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
 
-.memory-comments{
-margin-top:20px;
-border-left:3px solid #ddd;
-padding-left:20px;
-}
+    .video-block {
+      margin-top: 40px;
+    }
 
-.memory-comment{
-margin-bottom:18px;
-}
+    video {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+    }
 
-.comment-author{
-font-weight:bold;
-}
+    .audio-block {
+      margin-top: 30px;
+    }
 
-.comment-time{
-color:#777;
-font-size:0.9rem;
-margin-bottom:4px;
-}
+    audio {
+      width: 100%;
+    }
 
-.video-block{
-margin-top:40px;
-}
+    .condolence-book {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid #ddd;
+    }
 
-video{
-width:100%;
-border-radius:16px;
-}
+    .condolence-entry {
+      margin-bottom: 25px;
+      line-height: 1.7;
+    }
 
-.audio-block{
-margin-top:30px;
-}
+    .condolence-name {
+      font-weight: bold;
+    }
 
-audio{
-width:100%;
-}
+    .condolence-date {
+      font-size: 0.9rem;
+      color: #777;
+    }
 
-.condolence-book{
-margin-top:60px;
-padding-top:30px;
-border-top:1px solid #ddd;
-}
+    .condolence-form {
+      margin-top: 30px;
+    }
 
-.condolence-entry{
-margin-bottom:25px;
-}
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
 
-.condolence-name{
-font-weight:bold;
-}
-
-.condolence-date{
-font-size:0.9rem;
-color:#777;
-}
-
-.condolence-form{
-margin-top:30px;
-}
-
-textarea{
-width:100%;
-height:120px;
-padding:12px;
-border-radius:10px;
-border:1px solid #ccc;
-}
-
-button{
-margin-top:10px;
-padding:10px 20px;
-border-radius:20px;
-border:none;
-background:#333;
-color:white;
-cursor:pointer;
-}
-
-</style>
-
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      background: #333;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
-
 <body>
-
-<div class="memorial-wrapper">
-
-<div class="memorial-header">
-
-<img src="maria-portraet.png" class="memorial-portrait">
-
-<div class="memorial-name">
-Maria Schneider
-</div>
-
-<div class="memorial-dates">
-1948 – 2023
-</div>
-
-<div class="memorial-text">
-
-Maria war eine liebevolle Mutter, Großmutter und Freundin.
-Sie liebte ihren Garten, lange Spaziergänge und die Sonntage,
-an denen die ganze Familie zusammenkam.
-
-Viele erinnern sich besonders an ihre Küche,
-in der immer etwas gebacken oder gekocht wurde.
-
-</div>
-
-</div>
-
-
-<div class="memory-block">
-
-<h2>Apfelkuchen am Sonntag</h2>
-
-<img src="maria-kueche.png" class="memory-image">
-
-<div class="memory-comments">
-
-<div class="memory-comment">
-<div class="comment-author">Anna (Tochter)</div>
-<div class="comment-time">vor 2 Tagen</div>
-Mama hat jeden Sonntag für uns gekocht. Der Duft von Apfelkuchen wird mich immer an sie erinnern.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Markus (Sohn)</div>
-<div class="comment-time">vor 2 Tagen</div>
-Ich vermisse Mamas Apfelkuchen. Aber ich vermisse Mama noch mehr.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Julia (Nichte)</div>
-<div class="comment-time">vor 1 Tag</div>
-Erinnert ihr euch noch an die Frühlinge, wenn wir beim Nachbarn die frischen Äpfel gekauft haben?
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Herr Weber (Apfelbauer)</div>
-<div class="comment-time">vor 3 Wochen</div>
-Ich war heute am Grab von Maria. Sie hat viele Jahre bei uns auf dem Hof ihre Äpfel gekauft.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Thomas (Nachbar)</div>
-<div class="comment-time">heute</div>
-Jetzt hätte ich auch gern ein Stück von ihrem berühmten Apfelkuchen probiert.
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="memory-block">
-
-<h2>Familienabend</h2>
-
-<img src="maria-familie.png" class="memory-image">
-
-<div class="memory-comments">
-
-<div class="memory-comment">
-<div class="comment-author">Lena (Enkelin)</div>
-<div class="comment-time">vor 4 Tagen</div>
-Oma hatte immer dieses Lachen, das einen ganzen Raum warm gemacht hat.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Anna (Tochter)</div>
-<div class="comment-time">vor 4 Tagen</div>
-Mama hat Familienabende geliebt. Wenn alle zusammen waren, war sie am glücklichsten.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Peter (Schwiegersohn)</div>
-<div class="comment-time">vor 3 Tagen</div>
-Diese Abende im Garten werde ich nie vergessen.
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="memory-block">
-
-<h2>Tennisclub</h2>
-
-<img src="maria-tennis.png" class="memory-image">
-
-<div class="memory-comments">
-
-<div class="memory-comment">
-<div class="comment-author">Monika (Tennisfreundin)</div>
-<div class="comment-time">vor 6 Tagen</div>
-Maria war immer die Erste auf dem Platz.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Sabine (Tennisfreundin)</div>
-<div class="comment-time">vor 5 Tagen</div>
-Vor 30 Jahren hat sie hier ihre erste Stunde genommen.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Petra (Tennisclub)</div>
-<div class="comment-time">vor 4 Tagen</div>
-Mit Maria wurde jedes Training zu einem schönen Nachmittag.
-</div>
-
-<div class="memory-comment">
-<div class="comment-author">Hans (Ehemann)</div>
-<div class="comment-time">vor 3 Tagen</div>
-Ich habe Maria damals das Tennisspielen beigebracht.
-</div>
-
-</div>
-
-</div>
-
-
-
-<div class="video-block">
-
-<h2>Ein Moment aus ihrem Leben</h2>
-
-<video controls poster="maria-garten.png">
-<source src="maria-garten.mp4" type="video/mp4">
-</video>
-
-</div>
-
-
-
-<div class="audio-block">
-
-<h2>Eine Stimme, die bleibt</h2>
-
-<audio controls>
-<source src="maria-stimme.mp3" type="audio/mpeg">
-</audio>
-
-</div>
-
-
-
-<div class="condolence-book">
-
-<h2>Digitales Kondolenzbuch</h2>
-
-<div class="condolence-entry">
-<div class="condolence-name">Sabine (Freundin)</div>
-<div class="condolence-date">vor 5 Tagen</div>
-Maria hatte immer ein offenes Ohr. Sie wird uns fehlen.
-</div>
-
-<div class="condolence-entry">
-<div class="condolence-name">Lena (Enkelin)</div>
-<div class="condolence-date">vor 3 Tagen</div>
-Oma hat mir beigebracht, Plätzchen zu backen.
-</div>
-
-<div class="condolence-entry">
-<div class="condolence-name">Herr Keller (Nachbar)</div>
-<div class="condolence-date">gestern</div>
-Maria war ein Mensch, der jeden freundlich begrüßt hat.
-</div>
-
-<div class="condolence-entry">
-<div class="condolence-name">Erika Schmidt</div>
-<div class="condolence-date">heute</div>
-Ruhe in Frieden.
-</div>
-
-
-
-<div class="condolence-form">
-
-<textarea placeholder="Ihre Erinnerung oder Ihr Beileid"></textarea>
-
-<button>
-Erinnerung hinzufügen
-</button>
-
-</div>
-
-</div>
-
-</div>
-
+  <div class="memorial-wrapper">
+
+    <div class="memorial-header">
+      <img src="./maria-portraet.png" alt="Porträt von Maria Schneider" class="memorial-portrait">
+
+      <div class="memorial-name">
+        Maria Schneider
+      </div>
+
+      <div class="memorial-dates">
+        1948 – 2023
+      </div>
+
+      <div class="memorial-text">
+        Maria war eine liebevolle Mutter, Großmutter und Freundin.
+        Sie liebte ihren Garten, lange Spaziergänge und die Sonntage,
+        an denen die ganze Familie zusammenkam.
+
+        Viele erinnern sich besonders an ihre Küche,
+        in der immer etwas gebacken oder gekocht wurde.
+      </div>
+    </div>
+
+    <div class="memory-block">
+      <h2>Apfelkuchen am Sonntag</h2>
+
+      <img src="./maria-kueche.png" alt="Maria in der Küche" class="memory-image">
+
+      <div class="memory-comments">
+        <div class="memory-comment">
+          <div class="comment-author">Anna (Tochter)</div>
+          <div class="comment-time">vor 2 Tagen</div>
+          Mama hat jeden Sonntag für uns gekocht. Der Duft von Apfelkuchen wird mich immer an sie erinnern.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Markus (Sohn)</div>
+          <div class="comment-time">vor 2 Tagen</div>
+          Ich vermisse Mamas Apfelkuchen. Aber ich vermisse Mama noch mehr.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Julia (Nichte)</div>
+          <div class="comment-time">vor 1 Tag</div>
+          Erinnert ihr euch noch an die Frühlinge, wenn wir beim Nachbarn die frischen Äpfel gekauft haben?
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Herr Weber (Apfelbauer)</div>
+          <div class="comment-time">vor 3 Wochen</div>
+          Ich war heute am Grab von Maria. Sie hat viele Jahre bei uns auf dem Hof ihre Äpfel gekauft.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Thomas (Nachbar)</div>
+          <div class="comment-time">heute</div>
+          Jetzt hätte ich auch gern ein Stück von ihrem berühmten Apfelkuchen probiert.
+        </div>
+      </div>
+    </div>
+
+    <div class="memory-block">
+      <h2>Familienabend</h2>
+
+      <img src="./maria-familie.png" alt="Maria mit ihrer Familie" class="memory-image">
+
+      <div class="memory-comments">
+        <div class="memory-comment">
+          <div class="comment-author">Lena (Enkelin)</div>
+          <div class="comment-time">vor 4 Tagen</div>
+          Oma hatte immer dieses Lachen, das einen ganzen Raum warm gemacht hat.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Anna (Tochter)</div>
+          <div class="comment-time">vor 4 Tagen</div>
+          Mama hat Familienabende geliebt. Wenn alle zusammen waren, war sie am glücklichsten.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Peter (Schwiegersohn)</div>
+          <div class="comment-time">vor 3 Tagen</div>
+          Diese Abende im Garten werde ich nie vergessen.
+        </div>
+      </div>
+    </div>
+
+    <div class="memory-block">
+      <h2>Tennisclub</h2>
+
+      <img src="./maria-tennis.png" alt="Maria mit Tennisfreundinnen" class="memory-image">
+
+      <div class="memory-comments">
+        <div class="memory-comment">
+          <div class="comment-author">Monika (Tennisfreundin)</div>
+          <div class="comment-time">vor 6 Tagen</div>
+          Maria war immer die Erste auf dem Platz.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Sabine (Tennisfreundin)</div>
+          <div class="comment-time">vor 5 Tagen</div>
+          Vor 30 Jahren hat sie hier ihre erste Stunde genommen.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Petra (Tennisclub)</div>
+          <div class="comment-time">vor 4 Tagen</div>
+          Mit Maria wurde jedes Training zu einem schönen Nachmittag.
+        </div>
+
+        <div class="memory-comment">
+          <div class="comment-author">Hans (Ehemann)</div>
+          <div class="comment-time">vor 3 Tagen</div>
+          Ich habe Maria damals das Tennisspielen beigebracht.
+        </div>
+      </div>
+    </div>
+
+    <div class="video-block">
+      <h2>Ein Moment aus ihrem Leben</h2>
+
+      <video controls poster="./maria-garten.png">
+        <source src="./maria-garten.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="audio-block">
+      <h2>Eine Stimme, die bleibt</h2>
+
+      <audio controls>
+        <source src="./maria-stimme.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <div class="condolence-book">
+      <h2>Digitales Kondolenzbuch</h2>
+
+      <div class="condolence-entry">
+        <div class="condolence-name">Sabine (Freundin)</div>
+        <div class="condolence-date">vor 5 Tagen</div>
+        Maria hatte immer ein offenes Ohr. Sie wird uns fehlen.
+      </div>
+
+      <div class="condolence-entry">
+        <div class="condolence-name">Lena (Enkelin)</div>
+        <div class="condolence-date">vor 3 Tagen</div>
+        Oma hat mir beigebracht, Plätzchen zu backen.
+      </div>
+
+      <div class="condolence-entry">
+        <div class="condolence-name">Herr Keller (Nachbar)</div>
+        <div class="condolence-date">gestern</div>
+        Maria war ein Mensch, der jeden freundlich begrüßt hat.
+      </div>
+
+      <div class="condolence-entry">
+        <div class="condolence-name">Erika Schmidt</div>
+        <div class="condolence-date">heute</div>
+        Ruhe in Frieden.
+      </div>
+
+      <div class="condolence-form">
+        <textarea placeholder="Ihre Erinnerung oder Ihr Beileid"></textarea>
+
+        <button>
+          Erinnerung hinzufügen
+        </button>
+      </div>
+    </div>
+
+  </div>
 </body>
 </html>
