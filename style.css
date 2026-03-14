@@ -132,7 +132,7 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 1.02fr 0.98fr;
   gap: 36px;
   align-items: center;
 }
@@ -166,8 +166,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 5vw, 4.7rem);
-  margin-bottom: 22px;
+  font-size: clamp(2.6rem, 5vw, 4.9rem);
+  margin-bottom: 14px;
   letter-spacing: -0.03em;
 }
 
@@ -180,6 +180,13 @@ h2 {
 h3 {
   font-size: 1.36rem;
   margin-bottom: 12px;
+}
+
+.hero-subheadline {
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  margin-bottom: 20px;
+  color: var(--muted);
+  line-height: 1.25;
 }
 
 .hero-text,
@@ -208,50 +215,74 @@ h3 {
   justify-content: center;
 }
 
-.hero-image {
+.hero-image-wrap {
+  position: relative;
   width: 100%;
   border-radius: 32px;
+  overflow: hidden;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  background: var(--surface);
 }
 
-.scan-demo {
-  padding: 18px 0 42px;
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
-.scan-demo-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: center;
+.hero-plaque {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  width: min(42%, 220px);
+}
+
+.hero-plaque-metal {
+  background: linear-gradient(180deg, #dedede 0%, #bababa 100%);
+  border-radius: 24px;
+  padding: 14px;
+  box-shadow: 0 16px 28px rgba(0,0,0,0.18);
+  text-align: center;
+}
+
+.hero-plaque-qr {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  padding: 8px;
+}
+
+.hero-plaque-label {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  color: #3a3a3a;
+  text-transform: uppercase;
+}
+
+.intro-statement {
+  padding: 0 0 46px;
+}
+
+.intro-statement-inner {
   background: rgba(255, 255, 255, 0.58);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 28px 24px;
+  text-align: center;
   box-shadow: var(--shadow);
 }
 
-.scan-demo-copy p {
-  color: var(--muted);
-  margin: 0 0 22px;
-}
-
-.scan-demo-qr {
-  display: flex;
-  justify-content: center;
-}
-
-.qr-image {
-  width: min(100%, 260px);
-  border-radius: 18px;
-  background: #fff;
-  padding: 14px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
+.intro-statement-inner p {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  color: var(--text);
 }
 
 .how-it-works {
-  padding: 56px 0;
+  padding: 20px 0 56px;
 }
 
 .section-lead {
@@ -271,6 +302,7 @@ h3 {
   border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--shadow);
+  text-align: left;
 }
 
 .step-number {
@@ -285,23 +317,15 @@ h3 {
   margin-bottom: 16px;
 }
 
-.step-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 18px;
+.step-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--gold);
   margin-bottom: 18px;
 }
 
-.qr-step-image {
-  object-fit: contain;
-  background: #fff;
-  padding: 16px;
-  border: 1px solid var(--line);
-}
-
 .emotion-section {
-  padding: 30px 0 54px;
+  padding: 20px 0 54px;
 }
 
 .emotion-grid {
@@ -381,13 +405,23 @@ h3 {
   text-align: center;
 }
 
-.product-qr {
-  width: min(100%, 240px);
+.steel-plaque {
+  width: 240px;
+  height: 240px;
   margin: 0 auto 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #dadada 0%, #bdbdbd 100%);
+  padding: 16px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.22), 0 14px 26px rgba(0,0,0,0.12);
+}
+
+.product-qr {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   background: #fff;
-  padding: 14px;
-  border-radius: 18px;
-  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 8px;
 }
 
 .product-card-text {
@@ -477,7 +511,6 @@ h3 {
 
 @media (max-width: 980px) {
   .hero-grid,
-  .scan-demo-inner,
   .steps-grid,
   .emotion-grid,
   .product-grid,
@@ -486,7 +519,6 @@ h3 {
   }
 
   .hero-copy,
-  .scan-demo-inner,
   .step-card,
   .emotion-copy,
   .emotion-quote,
@@ -495,12 +527,13 @@ h3 {
   .demo-section-inner,
   .bestatter-copy,
   .bestatter-points,
-  .final-cta-inner {
+  .final-cta-inner,
+  .intro-statement-inner {
     padding: 28px;
   }
 
-  .step-image {
-    height: auto;
+  .hero-image {
+    aspect-ratio: 4 / 4.8;
   }
 }
 
@@ -540,11 +573,15 @@ h3 {
   }
 
   h1 {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
   }
 
   h2 {
     font-size: 1.9rem;
+  }
+
+  .hero-subheadline {
+    font-size: 1.2rem;
   }
 
   .hero-text,
@@ -558,5 +595,14 @@ h3 {
 
   .emotion-quote blockquote {
     font-size: 1.25rem;
+  }
+
+  .hero-plaque {
+    width: 46%;
+    bottom: 16px;
+  }
+
+  .hero-plaque-label {
+    font-size: 0.78rem;
   }
 }
