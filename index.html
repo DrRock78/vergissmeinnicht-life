@@ -7,328 +7,256 @@
 
 <title>Vergissmeinnicht.life – Erinnerungen bleiben</title>
 
-<meta name="description" content="Vergissmeinnicht verbindet eine dezente Edelstahlplakette mit QR-Code am Grab mit einem digitalen Erinnerungsraum für Fotos, Worte, Stimmen und Geschichten.">
+<meta name="description" content="Vergissmeinnicht verbindet eine dezente Edelstahlplakette mit QR-Code am Grab mit einem digitalen Erinnerungsraum für Fotos, Worte und Geschichten.">
 
-<link rel="icon" href="favicon.png">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-background:#f4efe7;
-color:#2d3136;
-line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-z-index:10;
-padding:24px 40px;
-display:flex;
-align-items:center;
-justify-content:flex-start;
-}
-
-.brand{
-display:flex;
-align-items:center;
-font-weight:600;
-font-size:18px;
-color:white;
-text-decoration:none;
-letter-spacing:0.3px;
-}
-
-.brand img{
-width:30px;
-margin-right:10px;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-overflow:hidden;
-}
-
-.hero img{
-position:absolute;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:1;
-}
-
-.hero-overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(
-180deg,
-rgba(0,0,0,0.15),
-rgba(0,0,0,0.45)
-);
-z-index:2;
-}
-
-.hero-content{
-position:relative;
-z-index:3;
-max-width:760px;
-padding:20px;
-}
-
-.hero-content h1{
-font-size:68px;
-font-weight:600;
-letter-spacing:-1px;
-margin-bottom:20px;
-}
-
-.hero-sub{
-font-size:24px;
-opacity:0.9;
-margin-bottom:40px;
-}
-
-.hero-button{
-display:inline-block;
-background:white;
-color:#1f2b3a;
-padding:16px 34px;
-border-radius:40px;
-font-weight:600;
-text-decoration:none;
-font-size:16px;
-transition:all .25s ease;
-}
-
-.hero-button:hover{
-transform:translateY(-2px);
-box-shadow:0 12px 35px rgba(0,0,0,0.25);
-}
-
-/* SECTION */
-
-.section{
-padding:120px 20px;
-max-width:1100px;
-margin:auto;
-}
-
-.section h2{
-font-size:38px;
-margin-bottom:20px;
-letter-spacing:-0.5px;
-}
-
-.section p{
-max-width:680px;
-font-size:18px;
-color:#4d5258;
-}
-
-/* STEPS */
-
-.steps{
-margin-top:50px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:26px;
-}
-
-.card{
-background:white;
-padding:36px;
-border-radius:22px;
-box-shadow:0 15px 40px rgba(0,0,0,0.07);
-}
-
-.card h3{
-font-size:20px;
-margin-bottom:10px;
-}
-
-/* EMOTION */
-
-.emotion{
-background:white;
-padding:110px 20px;
-text-align:center;
-}
-
-.emotion blockquote{
-font-size:30px;
-max-width:700px;
-margin:auto;
-font-weight:500;
-color:#2d3136;
-}
-
-/* PRODUCT */
-
-.product{
-padding:120px 20px;
-max-width:1100px;
-margin:auto;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
-
-.plaque{
-background:white;
-border-radius:24px;
-padding:40px;
-text-align:center;
-box-shadow:0 15px 40px rgba(0,0,0,0.07);
-}
-
-.plaque img{
-width:130px;
-margin-bottom:12px;
-}
-
-/* CTA */
-
-.cta{
-text-align:center;
-padding:120px 20px;
-}
-
-.cta h2{
-font-size:42px;
-margin-bottom:25px;
-}
-
-/* FOOTER */
-
-footer{
-border-top:1px solid rgba(0,0,0,0.08);
-padding:30px 20px;
-text-align:center;
-font-size:14px;
-color:#666;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero-content h1{
-font-size:44px;
-}
-
-.hero-sub{
-font-size:20px;
-}
-
-.product{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header>
-<a class="brand" href="#">
-<img src="logo-icon.png">
-Vergissmeinnicht.life
+<header class="site-header">
+<div class="container header-inner">
+
+<a href="index.html" class="brand">
+<img src="logo-icon.png" alt="Vergissmeinnicht Logo" class="brand-logo">
+<span class="brand-name">Vergissmeinnicht.life</span>
 </a>
+
+</div>
 </header>
+
+<main>
 
 <section class="hero">
 
-<img src="vergissmeinnicht-hero.png">
+<img src="vergissmeinnicht-hero.png" alt="Vergissmeinnicht Hero Bild" class="hero-bg">
 
 <div class="hero-overlay"></div>
 
-<div class="hero-content">
+<div class="container hero-content">
 
-<h1>Erinnerungen bleiben.</h1>
+<div class="hero-copy">
 
-<p class="hero-sub">
-Ein stiller digitaler Erinnerungsraum für Menschen, die uns fehlen.
+<div class="hero-kicker">
+Ein stiller digitaler Erinnerungsraum
+</div>
+
+<h1>
+Erinnerungen bleiben.
+</h1>
+
+<h2 class="hero-subheadline">
+QR-Erinnerungsseiten für Grabstätten und Erinnerungsorte.
+</h2>
+
+<p class="hero-text">
+Eine dezente Edelstahlplakette am Grab führt zu einer digitalen Erinnerungsseite
+mit Fotos, Worten, Stimmen und Geschichten – für Angehörige, Freunde und kommende Generationen.
 </p>
 
-<a class="hero-button" href="demo.html">
+<div class="hero-actions">
+
+<a href="demo.html" class="button-primary">
 Beispiel ansehen
 </a>
 
 </div>
 
+</div>
+
+</div>
+
 </section>
 
-<section class="section">
+<section class="intro-statement">
 
-<h2>Ein Name steht im Stein.  
-Doch ein Leben besteht aus Erinnerungen.</h2>
+<div class="container intro-statement-inner">
 
 <p>
-Vergissmeinnicht verbindet eine dezente Edelstahlplakette am Grab mit einem digitalen Erinnerungsraum.  
-Besucher scannen den QR-Code und gelangen zu einer Seite, auf der Fotos, Geschichten und Worte eines Lebens bewahrt werden.
+Ein Name steht im Stein. Doch ein Leben besteht aus Erinnerungen.
 </p>
 
-</section>
-
-<section class="section">
-
-<h2>So funktioniert Vergissmeinnicht</h2>
-
-<div class="steps">
-
-<div class="card">
-<h3>1. Plakette anbringen</h3>
-<p>Eine dezente, wetterfeste Edelstahlplakette wird am Grabstein oder Erinnerungsort angebracht.</p>
-</div>
-
-<div class="card">
-<h3>2. QR-Code scannen</h3>
-<p>Besucher scannen den Code mit ihrem Smartphone – ganz ohne App, direkt im Browser.</p>
-</div>
-
-<div class="card">
-<h3>3. Erinnerungen erleben</h3>
-<p>Fotos, Worte und Geschichten eines Lebens bleiben sichtbar – für Familie, Freunde und kommende Generationen.</p>
-</div>
-
 </div>
 
 </section>
 
-<section class="emotion">
+<section class="how-it-works">
+
+<div class="container">
+
+<h2>
+So funktioniert Vergissmeinnicht
+</h2>
+
+<p class="section-lead">
+In drei einfachen Schritten wird aus einem Grabstein ein würdevoller digitaler Erinnerungsraum.
+</p>
+
+<div class="steps-grid">
+
+<article class="step-card">
+
+<div class="step-number">1</div>
+
+<h3>
+Plakette anbringen
+</h3>
+
+<p>
+Eine dezente, wetterfeste Edelstahlplakette mit QR-Code wird am Grabstein oder Erinnerungsort angebracht.
+</p>
+
+</article>
+
+<article class="step-card">
+
+<div class="step-number">2</div>
+
+<h3>
+QR-Code scannen
+</h3>
+
+<p>
+Besucher scannen den QR-Code mit ihrem Smartphone – ohne App, direkt und unkompliziert.
+</p>
+
+</article>
+
+<article class="step-card">
+
+<div class="step-number">3</div>
+
+<h3>
+Erinnerungen sehen
+</h3>
+
+<p>
+Es öffnet sich eine Erinnerungsseite mit Fotos, Kommentaren, Geschichten und Erinnerungen.
+</p>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="emotion-section">
+
+<div class="container emotion-grid">
+
+<div class="emotion-copy">
+
+<h2>
+Erinnerungen verblassen nicht
+</h2>
+
+<p>
+Hinter jedem Namen stehen ein ganzes Leben, kleine Rituale, Stimmen, Bilder und gemeinsame Momente.
+Vergissmeinnicht bewahrt diese Erinnerungen an einem Ort, der dort beginnt, wo Menschen still werden und sich erinnern.
+</p>
+
+<p>
+So bleibt mehr als nur ein Name sichtbar – für Kinder, Enkel und für alle, die verstehen möchten, wer dieser Mensch war.
+</p>
+
+</div>
+
+<div class="emotion-quote">
 
 <blockquote>
-Hinter jedem Namen stehen ein Leben, eine Stimme und gemeinsame Erinnerungen.
+Erinnerungen sind das Wertvollste, was bleibt.
 </blockquote>
+
+</div>
+
+</div>
 
 </section>
 
-<section class="product">
+<section class="product-section">
+
+<div class="container product-grid">
+
+<div class="product-copy">
+
+<h2>
+Die Erinnerungsplakette
+</h2>
+
+<p>
+Eine wetterfeste Edelstahlplakette mit edler QR-Gravur, die auf einen stillen digitalen Erinnerungsraum verweist.
+</p>
+
+<ul class="product-list">
+
+<li>Wetterfeste Edelstahl-Ausführung</li>
+<li>Dezente, würdevolle Gestaltung</li>
+<li>Direkter Zugriff per Smartphone</li>
+<li>Geeignet für Grabsteine und Erinnerungsorte</li>
+
+</ul>
+
+</div>
+
+<div class="product-card">
+
+<div class="product-card-inner">
+
+<div class="steel-plaque">
+
+<img src="qr.png" alt="QR-Code Beispiel" class="product-qr">
+
+</div>
+
+<div class="product-card-text">
+Beispiel einer gravierten Erinnerungsplakette
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="final-cta">
+
+<div class="container final-cta-inner">
+
+<h2>
+Vergissmeinnicht – Erinnerungen bleiben.
+</h2>
+
+<div class="hero-actions">
+
+<a href="demo.html" class="button-primary">
+Beispiel ansehen
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+<div class="container footer-inner">
 
 <div>
+© Vergissmeinnicht.life – Created by Dr. Rock
+</div>
 
-<h2>Die Erinnerungsplakette
+</div>
+
+</footer>
+
+</body>
+</html>
