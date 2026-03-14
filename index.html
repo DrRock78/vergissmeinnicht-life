@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Vergissmeinnicht.life – Erinnerungen bleiben</title>
 
-<meta name="description" content="Vergissmeinnicht verbindet eine dezente Edelstahlplakette mit QR-Code am Grab mit einem digitalen Erinnerungsraum für Fotos, Worte, Stimmen und Geschichten.">
-
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="icon" href="favicon.png">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-background:#ece6dc;
-color:#1f2c3d;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:linear-gradient(180deg,#f6f1e8 0%,#efe7dc 40%,#e8dfd2 100%);
+color:#2b2e34;
+line-height:1.6;
 }
 
 .container{
@@ -25,249 +30,312 @@ margin:auto;
 padding:0 20px;
 }
 
+/* HEADER */
+
 .site-header{
-background:white;
-border-bottom:1px solid #eee;
+background:rgba(255,255,255,0.65);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .header-inner{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:16px 0;
+padding:18px 0;
 }
 
 .brand{
 display:flex;
 align-items:center;
 text-decoration:none;
-color:#1f2c3d;
+color:#2c2c2c;
 font-weight:600;
+font-size:18px;
 }
 
-.brand-logo{
-width:28px;
-margin-right:8px;
+.brand img{
+width:30px;
+margin-right:10px;
 }
 
 .header-nav a{
 margin-left:20px;
 text-decoration:none;
-color:#1f2c3d;
+color:#2b2e34;
+font-size:15px;
 }
 
-.header-button{
-background:#1f2c3d;
-color:white;
-padding:10px 16px;
-border-radius:20px;
-}
+/* HERO */
 
 .hero{
-padding:40px 0;
+padding:50px 0;
 }
 
 .hero img{
 width:100%;
-border-radius:24px;
-display:block;
+border-radius:28px;
+box-shadow:0 25px 50px rgba(0,0,0,0.15);
 }
 
 .hero-text{
-margin-top:30px;
-background:rgba(255,255,255,0.9);
-padding:28px;
-border-radius:20px;
+margin-top:35px;
+background:rgba(255,255,255,0.88);
+padding:40px;
+border-radius:28px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
 .hero-text h1{
-margin-top:0;
-font-size:40px;
+font-size:46px;
+line-height:1.1;
+margin-bottom:18px;
+letter-spacing:-0.5px;
 }
 
-.hero-actions{
-margin-top:20px;
+.hero-text p{
+font-size:18px;
+color:#4a4f57;
+margin-bottom:25px;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
 }
 
 .button-primary{
-background:#1f2c3d;
+background:#243042;
 color:white;
-padding:12px 20px;
-border-radius:24px;
+padding:14px 28px;
+border-radius:30px;
 text-decoration:none;
-margin-right:10px;
+font-weight:600;
+transition:all .25s ease;
+}
+
+.button-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 22px rgba(0,0,0,0.18);
 }
 
 .button-secondary{
-border:1px solid #1f2c3d;
-padding:12px 20px;
-border-radius:24px;
+border:1px solid #243042;
+padding:14px 28px;
+border-radius:30px;
 text-decoration:none;
-color:#1f2c3d;
+color:#243042;
+font-weight:500;
 }
 
+/* SECTIONS */
+
 .section{
-padding:70px 0;
+padding:90px 0;
 }
 
 .section h2{
-font-size:32px;
+font-size:36px;
 margin-bottom:16px;
 }
 
-.steps-grid{
+.section p{
+max-width:650px;
+color:#4a4f57;
+}
+
+/* STEPS */
+
+.steps{
+margin-top:40px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+/* PLAQUE */
+
+.product{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 margin-top:30px;
 }
 
-.step-card{
+.plaque{
 background:white;
-padding:24px;
-border-radius:18px;
-}
-
-.product-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-align-items:center;
-}
-
-.product-card{
-background:white;
-padding:20px;
-border-radius:18px;
+padding:40px;
+border-radius:20px;
 text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
 }
 
-.site-footer{
+.plaque img{
+width:120px;
+margin-bottom:12px;
+}
+
+/* FOOTER */
+
+.footer{
 margin-top:80px;
-border-top:1px solid #ddd;
+border-top:1px solid rgba(0,0,0,0.1);
 padding:30px 0;
 font-size:14px;
+color:#555;
 }
 
-.footer-inner{
-display:flex;
-justify-content:space-between;
-}
+/* MOBILE */
 
 @media(max-width:900px){
 
-.steps-grid{
-grid-template-columns:1fr;
-}
-
-.product-grid{
-grid-template-columns:1fr;
-}
-
 .hero-text h1{
-font-size:32px;
+font-size:34px;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.product{
+grid-template-columns:1fr;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header class="site-header">
+
 <div class="container header-inner">
 
-<a href="index.html" class="brand">
-<img src="logo-icon.png" alt="Vergissmeinnicht Logo" class="brand-logo">
-<span class="brand-name">Vergissmeinnicht.life</span>
+<a class="brand" href="#">
+<img src="logo-icon.png">
+Vergissmeinnicht.life
 </a>
 
 <nav class="header-nav">
 <a href="#funktion">So funktioniert es</a>
 <a href="#plakette">Die Plakette</a>
 <a href="#bestatter">Für Bestatter</a>
-<a href="demo.html" class="header-button">Beispiel ansehen</a>
 </nav>
 
 </div>
+
 </header>
 
 <main>
 
 <section class="hero">
+
 <div class="container">
 
-<img src="vergissmeinnicht-hero.png" alt="Vergissmeinnicht Erinnerungsbild">
+<img src="vergissmeinnicht-hero.png">
 
 <div class="hero-text">
 
 <h1>Erinnerungen bleiben.</h1>
 
 <p>
-Eine dezente Edelstahlplakette mit QR-Code am Grab führt zu einer digitalen Erinnerungsseite
-mit Fotos, Worten, Stimmen und Geschichten – für Angehörige, Freunde und kommende Generationen.
+Eine dezente Edelstahlplakette mit QR-Code verbindet Grabstein und digitalen Erinnerungsraum –
+für Fotos, Worte, Stimmen und Geschichten eines Lebens.
 </p>
 
-<div class="hero-actions">
-<a href="demo.html" class="button-primary">Beispiel ansehen</a>
-<a href="#bestatter" class="button-secondary">Für Bestatter</a>
+<div class="buttons">
+<a class="button-primary" href="#">Beispiel ansehen</a>
+<a class="button-secondary" href="#bestatter">Für Bestatter</a>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="section" id="funktion">
+
 <div class="container">
 
 <h2>So funktioniert Vergissmeinnicht</h2>
 
-<div class="steps-grid">
+<div class="steps">
 
-<div class="step-card">
+<div class="card">
 <h3>1. Plakette anbringen</h3>
-<p>Edelstahl-QR-Plakette wird am Grab oder Erinnerungsort angebracht.</p>
+<p>Eine hochwertige Edelstahlplakette wird am Grab oder Erinnerungsort angebracht.</p>
 </div>
 
-<div class="step-card">
+<div class="card">
 <h3>2. QR-Code scannen</h3>
-<p>Besucher scannen den Code mit ihrem Smartphone – ohne App.</p>
+<p>Besucher scannen den Code mit ihrem Smartphone – ganz ohne App.</p>
 </div>
 
-<div class="step-card">
-<h3>3. Erinnerungen sehen</h3>
-<p>Fotos, Geschichten und Worte werden auf der Erinnerungsseite sichtbar.</p>
+<div class="card">
+<h3>3. Erinnerungen erleben</h3>
+<p>Fotos, Worte und Geschichten eines Lebens werden sichtbar.</p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="section" id="plakette">
-<div class="container product-grid">
 
-<div>
+<div class="container">
+
 <h2>Die Erinnerungsplakette</h2>
 
+<div class="product">
+
+<div>
 <p>
-Eine wetterfeste Edelstahlplakette mit QR-Code verbindet Grabstein und digitale Erinnerungsseite.
+Eine wetterfeste Edelstahlplakette mit graviertem QR-Code verbindet Grabstein und digitalen Erinnerungsraum.
+</p>
+</div>
+
+<div class="plaque">
+
+<img src="qr-demo.png">
+
+<p style="font-size:14px;color:#666">
+Beispiel einer gravierten Erinnerungsplakette
 </p>
 
 </div>
 
-<div class="product-card">
-
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Fvergissmeinnicht.life%2F">
-
-<p>Beispiel einer gravierten Erinnerungsplakette</p>
-
 </div>
 
 </div>
+
 </section>
 
 <section class="section" id="bestatter">
+
 <div class="container">
 
 <h2>Für Bestatter und Friedhöfe</h2>
@@ -278,21 +346,17 @@ für Fotos, Geschichten und Worte der Angehörigen.
 </p>
 
 </div>
+
 </section>
 
 </main>
 
-<footer class="site-footer">
-<div class="container footer-inner">
+<footer class="footer">
 
-<div>© Vergissmeinnicht.life · Created by Dr. Rock</div>
-
-<div>
-<a href="index.html">Startseite</a> |
-<a href="demo.html">Beispielseite</a>
+<div class="container">
+© Vergissmeinnicht.life – Created by Dr. Rock
 </div>
 
-</div>
 </footer>
 
 </body>
